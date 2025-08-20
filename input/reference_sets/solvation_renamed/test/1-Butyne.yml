@@ -1,0 +1,58 @@
+RMG_version: 3.0.0
+adjacency_list: |
+  1  C u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+  2  C u0 p0 c0 {1,S} {7,S} {8,S} {9,S}
+  3  C u0 p0 c0 {1,S} {4,T}
+  4  C u0 p0 c0 {3,T} {10,S}
+  5  H u0 p0 c0 {1,S}
+  6  H u0 p0 c0 {1,S}
+  7  H u0 p0 c0 {2,S}
+  8  H u0 p0 c0 {2,S}
+  9  H u0 p0 c0 {2,S}
+  10 H u0 p0 c0 {4,S}
+thermo_data:
+  class: ThermoData
+  H298:
+    class: ScalarQuantity
+    units: kcal/mol
+    value: 1.2345   # ← 실험 ΔG*_solv(exp)
+calculated_data:
+  LevelOfTheory(method='b2plypd32023',basis='def2tzvp',software='gaussian'):
+    class: CalculatedDataEntry
+    thermo_data:
+      class: ThermoData
+      H298:
+        class: ScalarQuantity
+        units: kcal/mol
+        value: 0.987   # ← QM raw ΔG*_solv(raw)
+charge: 0
+class: ReferenceSpecies
+datetime: 2020-02-24 11:05
+default_xyz_chemistry:
+  basis: def2tzvpd
+  class: LevelOfTheory
+  method: wb97mv
+  software: qchem
+formula: C4H6
+inchi: InChI=1S/C4H6/c1-3-4-2/h1H,4H2,2H3
+inchi_key: KDKYADYSIPSCCQ-UHFFFAOYSA-N
+index: 238
+label: 1-Butyne
+molecular_weight:
+  class: ScalarQuantity
+  units: amu
+  value: 54.09039241417589
+multiplicity: 1
+reference_data:
+  ATcT:
+    class: ReferenceDataEntry
+    thermo_data:
+      H298:
+        class: ScalarQuantity
+        uncertainty: 0.67
+        uncertainty_type: +|-
+        units: kJ/mol
+        value: 165.77
+      class: ThermoData
+smiles: C#CCC
+symmetry_number: 3.0

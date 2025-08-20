@@ -1,0 +1,30 @@
+thermo_data:
+  class: ThermoData
+  H298:
+    class: ScalarQuantity
+    units: kcal/mol
+    value: -8.46
+calculated_data:
+  LevelOfTheory(method='b2plypd32023',basis='def2tzvp',software='gaussian'):
+    class: CalculatedDataEntry
+    thermo_data:
+      class: ThermoData
+      H298:
+        class: ScalarQuantity
+        units: kcal/mol
+        value: -7.57070018
+class: ReferenceSpecies
+inchi: InChI=1S/C8H9NO2/c1-9-8(10)11-7-5-3-2-4-6-7/h2-6H,1H3,(H,9,10)
+label: CNC(=O)Oc1ccccc1
+smiles: CNC(=O)Oc1ccccc1
+reference_data:
+  ATcT:
+    class: ReferenceDataEntry
+    thermo_data:
+      H298:
+        class: ScalarQuantity
+        uncertainty: 0
+        uncertainty_type: +|-
+        units: kJ/mol
+        value: -7.57070018
+      class: ThermoData
